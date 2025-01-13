@@ -1,0 +1,27 @@
+name: WARP IPv6
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
+  push:
+    paths:
+      - ".github/workflows/warp-ipv6.yaml"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    timeout-minutes: 10
+
+    steps:
+      - name: Set up WARP
+        uses: fscarmen/warp-on-actions@v1.3
+        with:
+          stack: ipv6
+
+      - run: curl -s6m8 --retry 3 -A Mozilla https://api.ip.sb/geoip
