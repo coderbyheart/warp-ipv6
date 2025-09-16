@@ -21,7 +21,7 @@ jobs:
 
     steps:
       - name: Set up WARP
-        uses: fscarmen/warp-on-actions@v1.3
+        uses: fscarmen/warp-on-actions@v1.4
         with:
           stack: ipv6
 
