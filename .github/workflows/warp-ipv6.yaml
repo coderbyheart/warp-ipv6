@@ -25,4 +25,4 @@ jobs:
         with:
           stack: ipv6
 
-      - run: curl -s6m8 --retry 3 -A Mozilla https://api.ip.sb/geoip
+      - run: curl -s6m60 --retry 3 -A Mozilla https://api.ip.sb/geoip
